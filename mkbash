@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sleep 0.6
+
+mv .bashrc ~/
+
+mv kitty/ ~/.config/
+
+echo "bash config complated!"
