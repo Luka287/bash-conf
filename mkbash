@@ -1,9 +1,54 @@
 #!/bin/bash
 
-sleep 0.6
 
-mv .bashrc ~/
+YELLOW="\033[1;33m"
+CYAN="\033[0;36m"
 
-mv kitty/ ~/.config/
+echo -e "${CYAN} ::Which terminal emulator are you using?";
+
+echo ""
+
+echo "=>none - 0"
+echo "=>Kitty - 1"
+
+echo ""
+
+echo -en "${YELLOW}[0,1,2]-> "; read;
+echo -e "${CYAN}"
+
+if [ ${REPLY} = "1" ]; then
+    sudo cp kitty/ ~/.config/
+elif [ ${REPLY} = "0" ]; then
+    echo "OK"
+else 
+	echo "OK"
+fi;
+
+echo ""
+
+echo -e "::Which .bashrc file do you want to use?";
+
+echo ""
+
+echo "=>none - 0"
+echo "=>bashrc1 - 1"
+echo "=>bashrc2 - 2"
+
+echo ""
+
+echo -en "${YELLOW}[0,1,2]-> "; read;
+echo -e "${CYAN}"
+
+if [ ${REPLY} = "0" ]; then
+	echo "OK"
+elif [ ${REPLY} = "1" ]; then
+    sudo cp bashrc-files/.bashrc1 ~/.bashrc
+elif [ ${REPLY} = "2" ]; then
+    sudo cp bashrc-files/.bashrc2 ~/.bashrc
+else 
+	echo "OK"
+fi;
+
+echo ""
 
 echo "bash config complated!"
