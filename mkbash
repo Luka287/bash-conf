@@ -29,11 +29,11 @@ echo ""
 echo "=>none - 0"
 echo "=>bashrc1 - 1"
 echo "=>bashrc2 - 2"
+echo "=>bashrc3 - 3"
 
 echo ""
 
-
-echo -en "${YELLOW}[0,1,2]-> "; read;
+echo -en "${YELLOW}[0,1,2,3]-> "; read;
 echo -en "${CYAN}"
 
 if [ ${REPLY} = "0" ]; then
@@ -42,6 +42,8 @@ elif [ ${REPLY} = "1" ]; then
     sudo cp bashrc-files/.bashrc1 ~/.bashrc
 elif [ ${REPLY} = "2" ]; then
     sudo cp bashrc-files/.bashrc2 ~/.bashrc
+elif [ ${REPLY} = "3" ]; then
+    sudo cp bashrc-files/.bashrc3 ~/.bashrc
 fi;
 
 echo "bash config complated!"
